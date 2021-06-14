@@ -1,0 +1,83 @@
+@import "variables";
+@import "~element-ui/lib/theme-chalk/display";
+
+html {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  color: $--color-text;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+body {
+  margin: 0 auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+/* @mixin for-phone-portrait {
+  @media (max-width: 639px) { @content; }
+}
+@mixin for-phone-landscape {
+  @media (min-width: 640px) and (max-width: 767px) { @content; }
+} */
+@mixin for-phone {
+  @media (max-width: 767px) { @content; }
+}
+@mixin for-tablet-portrait {
+  @media (min-width: 768px) and (max-width: 1023px) { @content; }
+}
+@mixin for-tablet-landscape {
+  @media (min-width: 1024px) and (max-width: 1199px) { @content; }
+}
+@mixin for-desktop {
+  @media (min-width: 1200px) and (max-width: 1799px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+@mixin for-iphone-x-portrait {
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px) 
+  and (-webkit-device-pixel-ratio : 3)
+  and (orientation : portrait) { @content; }
+}
+@mixin for-iphone-x-landscape {
+  @media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 914px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) { @content; }
+}
+
+@mixin for-ipad-pro-portrait {
+  @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1.5) { @content; }
+}
+
+@mixin for-ipad-pro-landscape {
+  @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) { @content; }
+}
+
+.tab .el-tabs__content {
+  overflow: inherit;
+}
